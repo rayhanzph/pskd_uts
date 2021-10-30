@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Fast converting, encoding and decoding — Cryptii</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/default.css" media="screen">
+    <link rel="stylesheet" href="css/jquery.ui.slider.min.css" media="screen">
+</head>
+
+<body>
+
+    <div id="frame">
+        <div id="wrapper">
+
+            <hgroup>
+                <h1>
+                    <a>Cryptii</a>
+                </h1>
+            </hgroup>
+
+            <div id="application"></div>
+        </div>
+    </div>
+
+    <script>
+        // hash fallback 
+        var History = {
+            options: {
+                html4Mode: true,
+                disableSuid: true
+            }
+        };
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.ui.slider.min.js"></script>
+    <script src="js/jquery.history.js"></script>
+    <script src="js-source/libraries/phpjs/chr.js"></script>
+    <script src="js-source/libraries/phpjs/ord.js"></script>
+    <script src="js-source/libraries/phpjs/sha1.js"></script>
+    <script src="js-source/libraries/phpjs/md5.js"></script>
+    <script src="js-source/libraries/phpjs/utf8_encode.js"></script>
+    <script src="js-source/libraries/phpjs/urlencode.js"></script>
+    <script src="js-source/libraries/phpjs/urldecode.js"></script>
+    <script src="js-source/cryptii.js"></script>
+    <script src="js-source/view/view.js"></script>
+    <script src="js-source/conversion/conversion.js"></script>
+    <script src="js-source/conversion/formats/text.js"></script>
+    <script src="js-source/conversion/formats/flipped.js"></script>
+    <script src="js-source/conversion/formats/htmlentities.js"></script>
+    <script src="js-source/conversion/formats/morsecode.js"></script>
+    <script src="js-source/conversion/formats/leetspeak.js"></script>
+    <script src="js-source/conversion/formats/navajo.js"></script>
+    <script src="js-source/conversion/formats/decimal.js"></script>
+    <script src="js-source/conversion/formats/binary.js"></script>
+    <script src="js-source/conversion/formats/octal.js"></script>
+    <script src="js-source/conversion/formats/hexadecimal.js"></script>
+    <script src="js-source/conversion/formats/roman-numerals.js"></script>
+    <script src="js-source/conversion/formats/atbash.js"></script>
+    <script src="js-source/conversion/formats/caesar.js"></script>
+    <script src="js-source/conversion/formats/vigenere.js"></script>
+    <script src="js-source/conversion/formats/rot13.js"></script>
+    <script src="js-source/conversion/formats/ita2.js"></script>
+    <script src="js-source/conversion/formats/pigpen.js"></script>
+    <script src="js-source/conversion/formats/base64.js"></script>
+    <script src="js-source/conversion/formats/md5.js"></script>
+    <script src="js-source/conversion/formats/sha1.js"></script>
+
+    <script>
+        // start application
+        cryptii.init();
+    </script>
+
+</body>
+
+</html>
