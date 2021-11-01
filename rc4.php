@@ -374,37 +374,119 @@ function status(a) { }//alert(a)}
                   }
                 
               </script>
+<style type="text/css">
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-    <h3>RC4 Encryption (input text for both field):</h3>
-    <form method="POST" name="rc4">
-      <div align="center">
-        <table border="0">
-          <tr>
-            <td align="right">
-              Key:
-            </td>
-            <td>
-              <input type="text" size="60" name="key" value="">
-            </td>
-          </tr>
-          <tr>
-            <td align="right">
-              Text:
-            </td>
-            <td>
-              <textarea name="text" rows="6" cols="70"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p align="center">
-                <input type="button" name="B1" value="Encrypt" onclick="rc4encrypt()">
-                <input type="button" name="B2" value="Decrypt" onclick="rc4decrypt()">
-              </p>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </form>
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background-color: #552b7b;
+  }
+
+  #h-title {
+    margin-left: 50px;
+    color:white;
+  }
+
+  header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  header a {
+    display: block;
+    padding: 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+  }
+
+  header a:hover {
+    background-color: white;
+    color: #552b7b;
+    transition: 0.5s;
+  }
+
+  main{
+    height: 90vh;
+    background-color: #552b7b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+  input{
+    margin-top: 20px;
+    border-radius: 5px;
+    border:none;
+    font-size: 18px;
+    padding:5px 10px;
+  }
+
+  textarea{
+    resize: none;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+
+  .btn{
+    margin-top: 5px;
+    padding: 5px;
+    background-color: white;
+    color: #552b7b;
+  }
+
+  .btn:hover{
+    cursor: pointer;
+    border:2px solid white;
+    background-color: #552b7b;
+    transition: 0.5s;
+    color:white;
+  }
+
+</style>
+    <header>
+      <header>
+        <h2 id="h-title">UTS PSKD</h2>
+        <ul>
+            <li><a href="index.php">Crypting</a></li>
+            <li><a href="./loginRegist/regist.php">Regist</a></li>
+            <li><a href="./loginRegist/login.php">Login</a></li>
+        </ul>
+    </header>
+    </header>
+    <main>
+      <h1>RC4 Encryptions</h1>
+      <form method="POST" name="rc4">
+        <p>Key: <input type="text" size="60" name="key" value=" "></p>
+        
+        <p>Text: </p>
+        <textarea name="text" rows="6" cols="70"></textarea>
+        <input class='btn' type="button" name="B1" value="Encrypt " onclick="rc4encrypt()">
+        <input class='btn' type="button" name="B2" value="Decrypt " onclick="rc4decrypt()">
+      </form>
+    </main>
   </body>
 </html>
