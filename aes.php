@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>AES 256 Encrypt/Decrypt</title>
-    <!-- <script src="src/jquery-1.11.0.min.js"></script> -->
+    <script src="src/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="src/gibberish-aes-1.0.0.min.js"></script>
     <link rel="stylesheet" href="./src/aesStyles.css">
     <link rel="stylesheet" href="./src/indexStyle.css">
@@ -36,7 +36,7 @@
         </div>
         <div class="right">
             <h1>Ciphertext</h1>
-            <textarea rows="4" cols="50" wrap="soft" id="out" readonly="readonly""></textarea>
+            <textarea rows="4" cols="50" wrap="soft" id="out"></textarea>
         </div>
     </form>
 
