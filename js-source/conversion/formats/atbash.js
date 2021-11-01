@@ -5,87 +5,81 @@
 //
 
 (function($, cryptii) {
-	
-	"use strict";
 
-	var format = {
+    "use strict";
 
-		title: 'Atbash Latin',
-		category: 'Cipher',
-		url: 'http://en.wikipedia.org/wiki/Atbash',
+    var format = {
 
-		convertDecimal: function(decimal)
-		{
-			// convert single decimal block
-			// ignore spaces
-			if (decimal == 32 || decimal == 10) 
-				return decimal;
+        title: 'Atbash Latin',
+        category: 'Cipher',
+        url: 'http://en.wikipedia.org/wiki/Atbash',
 
-			// to uppercase
-			if (decimal > 90)
-				decimal -= 32;
+        convertDecimal: function(decimal) {
+            // convert single decimal block
+            // ignore spaces
+            if (decimal == 32 || decimal == 10)
+                return decimal;
 
-			//check if it is alphabetic
-			if (!(decimal >= 65 && decimal <= 90))
-				return -1;
-			
-			// calculate
-			return (25 - (decimal - 65) + 65);
-		},
+            // to uppercase
+            if (decimal > 90)
+                decimal -= 32;
 
-		interpret: {
-			options: {
+            //check if it is alphabetic
+            if (!(decimal >= 65 && decimal <= 90))
+                return -1;
 
-			},
-			run: function(conversion, options)
-			{
-				var formatDef = cryptii.conversion.formats['atbash'];
-				conversion.isSplittedContentConversion = true;
+            // calculate
+            return (25 - (decimal - 65) + 65);
+        },
 
-				for (var i = 0; i < conversion.content.length; i ++)
-				{
-					var content = conversion.content[i];
-					var decimal = formatDef.convertDecimal(ord(content));
+        interpret: {
+            options: {
 
-					if (decimal == -1)
-						decimal = ord(content);
+            },
+            run: function(conversion, options) {
+                var formatDef = cryptii.conversion.formats['atbash'];
+                conversion.isSplittedContentConversion = true;
 
-					conversion.splittedContent.push({
-						content: content,
-						decimal: decimal,
-						result: null
-					});
-				}
-			}
-		},
+                for (var i = 0; i < conversion.content.length; i++) {
+                    var content = conversion.content[i];
+                    var decimal = formatDef.convertDecimal(ord(content));
 
-		convert: {
-			options: {
+                    if (decimal == -1)
+                        decimal = ord(content);
 
-			},
-			run: function(conversion, options)
-			{
-				var formatDef = cryptii.conversion.formats['atbash'];
+                    conversion.splittedContent.push({
+                        content: content,
+                        decimal: decimal,
+                        result: null
+                    });
+                }
+            }
+        },
 
-				for (var i = 0; i < conversion.splittedContent.length; i ++)
-				{
-					var entry = conversion.splittedContent[i];
+        convert: {
+            options: {
 
-					if (entry.decimal != null)
-					{
-						var decimal = formatDef.convertDecimal(entry.decimal);
+            },
+            run: function(conversion, options) {
+                var formatDef = cryptii.conversion.formats['atbash'];
 
-						// if conversion valid, use the result
-						//  if not use the original letter
-						entry.result = (decimal != -1 ? chr(decimal) : chr(entry.decimal));
-					}
-				}
-			}
-		}
+                for (var i = 0; i < conversion.splittedContent.length; i++) {
+                    var entry = conversion.splittedContent[i];
 
-	};
+                    if (entry.decimal != null) {
+                        var decimal = formatDef.convertDecimal(entry.decimal);
 
-	// register format
-	cryptii.conversion.registerFormat('atbash', format);
+                        // if conversion valid, use the result
+                        //  if not use the original letter
+                        entry.result = (decimal != -1 ? chr(decimal) : chr(entry.decimal));
+                    }
+                }
+            }
+        }
+
+    };
+
+    // register format
+    cryptii.conversion.registerFormat('atbash', format);
 
 })($, cryptii);

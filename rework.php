@@ -12,13 +12,16 @@
 
     <link rel="stylesheet" href="css/jquery.ui.slider.min.css" media="screen">
 </head>
+
 <body>
     <header>
         <h2 id="h-title">UTS PSKD</h2>
         <ul>
+            <li><a href="./rework.php">Let's Encrypt</a></li>
+            <li><a href="index.php">Affine</a></li>
             <li><a href="index.php">AES</a></li>
-            <li><a href="./rework.php">Rework</a></li>
-            <li><a href="./loginRegist/regist.php">Regist</a></li>
+            <li><a href="index.php">RC4</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="./loginRegist/login.php">Login</a></li>
         </ul>
     </header>

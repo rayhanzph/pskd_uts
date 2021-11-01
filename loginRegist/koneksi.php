@@ -1,2 +1,2 @@
 <?php
-$db = mysqli_connect("localhost","root","", "skd_prak_uts");
+$db = mysqli_connect("localhost", "root", "", "skd_uts");
