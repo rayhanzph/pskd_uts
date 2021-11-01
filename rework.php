@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="css/jquery.ui.slider.min.css" media="screen">
 </head>
-
 <body>
     <header>
         <h2 id="h-title">UTS PSKD</h2>
@@ -23,15 +22,8 @@
             <li><a href="./loginRegist/login.php">Login</a></li>
         </ul>
     </header>
-
     <div id="wrapper">
-
-
-
         <div id="application"></div>
-
-
-
 </body>
 <script>
     // use hash fallback (local use)
